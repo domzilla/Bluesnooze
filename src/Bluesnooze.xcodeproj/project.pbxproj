@@ -3,25 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F229ABE243CC29500B1784C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F229ABD243CC29500B1784C /* AppDelegate.swift */; };
-		4F229AC0243CC29600B1784C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F229ABF243CC29600B1784C /* Assets.xcassets */; };
-		4F229AC3243CC29600B1784C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F229AC1243CC29600B1784C /* MainMenu.xib */; };
 		F8A11C7728A9A4C5003A156B /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = F8A11C7628A9A4C5003A156B /* LaunchAtLogin */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F229ABA243CC29500B1784C /* Bluesnooze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bluesnooze.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F229ABD243CC29500B1784C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F229ABF243CC29600B1784C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F229AC2243CC29600B1784C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		4F229AC4243CC29600B1784C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F229AC5243CC29600B1784C /* Bluesnooze.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Bluesnooze.entitlements; sourceTree = "<group>"; };
-		4F229ACB243CC72800B1784C /* Bluesnooze-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bluesnooze-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F25D69CD2F4D952100DD1ED0 /* Exceptions for "Bluesnooze" folder in "Bluesnooze" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/Info.plist,
+			);
+			target = 4F229AB9243CC29500B1784C /* Bluesnooze */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F25D69C82F4D951500DD1ED0 /* Bluesnooze */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F25D69CD2F4D952100DD1ED0 /* Exceptions for "Bluesnooze" folder in "Bluesnooze" target */,
+			);
+			path = Bluesnooze;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4F229AB7243CC29500B1784C /* Frameworks */ = {
@@ -38,7 +50,7 @@
 		4F229AB1243CC29500B1784C = {
 			isa = PBXGroup;
 			children = (
-				4F229ABC243CC29500B1784C /* Bluesnooze */,
+				F25D69C82F4D951500DD1ED0 /* Bluesnooze */,
 				4F229ABB243CC29500B1784C /* Products */,
 				4FDC9C0D243DCB7B00FB0C4E /* Frameworks */,
 			);
@@ -50,19 +62,6 @@
 				4F229ABA243CC29500B1784C /* Bluesnooze.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4F229ABC243CC29500B1784C /* Bluesnooze */ = {
-			isa = PBXGroup;
-			children = (
-				4F229ABD243CC29500B1784C /* AppDelegate.swift */,
-				4F229ABF243CC29600B1784C /* Assets.xcassets */,
-				4F229AC1243CC29600B1784C /* MainMenu.xib */,
-				4F229AC4243CC29600B1784C /* Info.plist */,
-				4F229AC5243CC29600B1784C /* Bluesnooze.entitlements */,
-				4F229ACB243CC72800B1784C /* Bluesnooze-Bridging-Header.h */,
-			);
-			path = Bluesnooze;
 			sourceTree = "<group>";
 		};
 		4FDC9C0D243DCB7B00FB0C4E /* Frameworks */ = {
@@ -79,16 +78,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F229AC8243CC29600B1784C /* Build configuration list for PBXNativeTarget "Bluesnooze" */;
 			buildPhases = (
-				4F707EAE243DC8DA00CBAE8A /* ShellScript */,
 				4F229AB6243CC29500B1784C /* Sources */,
 				4F229AB7243CC29500B1784C /* Frameworks */,
 				4F229AB8243CC29500B1784C /* Resources */,
-				4FDC9C11243DCBD700FB0C4E /* Run Script */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				F874ADB328A9A39400B7489B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F25D69C82F4D951500DD1ED0 /* Bluesnooze */,
 			);
 			name = Bluesnooze;
 			packageProductDependencies = (
@@ -105,7 +105,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 2620;
 				ORGANIZATIONNAME = "Oliver Peate";
 				TargetAttributes = {
 					4F229AB9243CC29500B1784C = {
@@ -115,7 +115,6 @@
 				};
 			};
 			buildConfigurationList = 4F229AB5243CC29500B1784C /* Build configuration list for PBXProject "Bluesnooze" */;
-			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -126,6 +125,7 @@
 			packageReferences = (
 				F89A537F28A87B3C005E9DC2 /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 4F229ABB243CC29500B1784C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,57 +140,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F229AC0243CC29600B1784C /* Assets.xcassets in Resources */,
-				4F229AC3243CC29600B1784C /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4F707EAE243DC8DA00CBAE8A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		4FDC9C11243DCBD700FB0C4E /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "exec \"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F229AB6243CC29500B1784C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F229ABE243CC29500B1784C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,17 +161,6 @@
 			productRef = F874ADB228A9A39400B7489B /* LaunchAtLogin */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4F229AC1243CC29600B1784C /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F229AC2243CC29600B1784C /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4F229AC6243CC29600B1784C /* Debug */ = {
@@ -337,7 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Bluesnooze/Bluesnooze.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Bluesnooze/Resources/Bluesnooze.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -345,7 +293,7 @@
 				DEVELOPMENT_TEAM = 568T6RKXH7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Bluesnooze/Info.plist;
+				INFOPLIST_FILE = Bluesnooze/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -354,7 +302,7 @@
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.domzilla.Bluesnooze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Bluesnooze/Bluesnooze-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bluesnooze/Classes/Bluesnooze-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -365,7 +313,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Bluesnooze/Bluesnooze.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Bluesnooze/Resources/Bluesnooze.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -373,7 +321,7 @@
 				DEVELOPMENT_TEAM = 568T6RKXH7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Bluesnooze/Info.plist;
+				INFOPLIST_FILE = Bluesnooze/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -382,7 +330,7 @@
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.domzilla.Bluesnooze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Bluesnooze/Bluesnooze-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bluesnooze/Classes/Bluesnooze-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
