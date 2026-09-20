@@ -1,0 +1,8 @@
+/* Accessibility label for the menu bar icon */
+"Bluesnooze" = "Bluesnooze";
+
+/* Accessibility hint for a paired Bluetooth device menu item */
+"Disconnects this device when the Mac goes to sleep." = "Disconnects this device when the Mac goes to sleep.";
+
+/* Accessibility hint for the Hide icon menu item */
+"Hides the menu bar icon. Launch the app again to show it." = "Hides the menu bar icon. Launch the app again to show it.";

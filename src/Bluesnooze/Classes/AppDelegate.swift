@@ -45,6 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             initStatusItem()
         }
         setupNotificationHandlers()
+        setupAccessibility()
     }
 
     // Re-add the status bar icon when the app is launched a second time
@@ -462,6 +463,51 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             statusItem.button?.title = "Bluesnooze"
         }
         statusItem.button?.action = #selector(handleMenuOpen(_:))
+        statusItem.button?.setAccessibilityLabel(NSLocalizedString(
+            "Bluesnooze",
+            tableName: "Accessibility",
+            comment: "Accessibility label for the menu bar icon"
+        ))
+        statusItem.button?.setAccessibilityIdentifier("AppDelegate.statusItem")
+    }
+
+    private func setupAccessibility() {
+        let bluetoothMenuItem = statusMenu.item(withTitle: "Bluetooth")
+        let wifiMenuItem = statusMenu.item(withTitle: "Wi-Fi")
+        let wifiMenu = wifiMenuItem?.submenu
+        let websiteMenuItem = statusMenu.item(withTitle: "Website")
+        let quitMenuItem = statusMenu.item(withTitle: "Quit")
+        let bluetoothSleepActionHeaderMenuItem = bluetoothMenu.item(withTitle: "Action when sleeping")
+        let bluetoothUnlockActionHeaderMenuItem = bluetoothMenu.item(withTitle: "Action when unlocked")
+        let wifiUnlockActionHeaderMenuItem = wifiMenu?.item(withTitle: "Action when unlocked:")
+
+        bluetoothMenuItem?.setAccessibilityIdentifier("AppDelegate.bluetoothMenuItem")
+        bluetoothSleepActionHeaderMenuItem?.setAccessibilityIdentifier("AppDelegate.bluetoothSleepActionHeaderMenuItem")
+        disableBluetoothOnPowerDownMenuItem.setAccessibilityIdentifier("AppDelegate.disableBluetoothOnPowerDownMenuItem")
+        disconnectBluetoothDevicesOnPowerDownMenuItem.setAccessibilityIdentifier("AppDelegate.disconnectBluetoothDevicesOnPowerDownMenuItem")
+        bluetoothUnlockActionHeaderMenuItem?.setAccessibilityIdentifier("AppDelegate.bluetoothUnlockActionHeaderMenuItem")
+        bluetoothActionOnScreenUnlockRestore.setAccessibilityIdentifier("AppDelegate.bluetoothActionOnScreenUnlockRestore")
+        bluetoothActionOnScreenUnlockEnable.setAccessibilityIdentifier("AppDelegate.bluetoothActionOnScreenUnlockEnable")
+        bluetoothActionOnScreenUnlockNothing.setAccessibilityIdentifier("AppDelegate.bluetoothActionOnScreenUnlockNothing")
+
+        wifiMenuItem?.setAccessibilityIdentifier("AppDelegate.wifiMenuItem")
+        disableWifiOnPowerDownMenuItem.setAccessibilityIdentifier("AppDelegate.disableWifiOnPowerDownMenuItem")
+        wifiUnlockActionHeaderMenuItem?.setAccessibilityIdentifier("AppDelegate.wifiUnlockActionHeaderMenuItem")
+        wifiActionOnScreenUnlockRestore.setAccessibilityIdentifier("AppDelegate.wifiActionOnScreenUnlockRestore")
+        wifiActionOnScreenUnlockEnable.setAccessibilityIdentifier("AppDelegate.wifiActionOnScreenUnlockEnable")
+        wifiActionOnScreenUnlockNothing.setAccessibilityIdentifier("AppDelegate.wifiActionOnScreenUnlockNothing")
+
+        launchAtLoginMenuItem.setAccessibilityIdentifier("AppDelegate.launchAtLoginMenuItem")
+
+        hideIconMenuItem.setAccessibilityHelp(NSLocalizedString(
+            "Hides the menu bar icon. Launch the app again to show it.",
+            tableName: "Accessibility",
+            comment: "Accessibility hint for the Hide icon menu item"
+        ))
+        hideIconMenuItem.setAccessibilityIdentifier("AppDelegate.hideIconMenuItem")
+
+        websiteMenuItem?.setAccessibilityIdentifier("AppDelegate.websiteMenuItem")
+        quitMenuItem?.setAccessibilityIdentifier("AppDelegate.quitMenuItem")
     }
 
     private func boolToMenuState(v: Bool?) -> NSControl.StateValue {
@@ -478,6 +524,13 @@ class BluetoothDeviceMenuItem : NSMenuItem {
         self.deviceAddressString = device.addressString
         
         super.init(title: device.nameOrAddress, action: selector, keyEquivalent: charCode)
+
+        setAccessibilityHelp(NSLocalizedString(
+            "Disconnects this device when the Mac goes to sleep.",
+            tableName: "Accessibility",
+            comment: "Accessibility hint for a paired Bluetooth device menu item"
+        ))
+        setAccessibilityIdentifier("BluetoothDeviceMenuItem.deviceMenuItem")
     }
     
     public required init(coder: NSCoder) {
