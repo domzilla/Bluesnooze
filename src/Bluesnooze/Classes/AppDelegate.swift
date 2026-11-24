@@ -178,7 +178,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Bluetooth
         disableBluetoothOnPowerDownMenuItem.state = boolToMenuState(v: disableBluetoothOnPowerDown)
         
-        disconnectBluetoothDevicesOnPowerDownMenuItem.isEnabled = !disableBluetoothOnPowerDown
         disconnectBluetoothDevicesOnPowerDownMenuItem.state = boolToMenuState(v: disconnectBluetoothDevicesOnPowerDown)
         
         // Populate the Bluetooth device list
@@ -244,6 +243,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         disconnectBluetoothDevicesOnPowerDown = !disconnectBluetoothDevicesOnPowerDown
         if bluetoothActionOnScreenUnlock == "restore" {
             bluetoothActionOnScreenUnlock = "nothing"
+        }
+
+        if disconnectBluetoothDevicesOnPowerDown {
+            disableBluetoothOnPowerDown = false
         }
     }
 
@@ -479,7 +482,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let quitMenuItem = statusMenu.item(withTitle: "Quit")
         let bluetoothSleepActionHeaderMenuItem = bluetoothMenu.item(withTitle: "Action when sleeping")
         let bluetoothUnlockActionHeaderMenuItem = bluetoothMenu.item(withTitle: "Action when unlocked")
-        let wifiUnlockActionHeaderMenuItem = wifiMenu?.item(withTitle: "Action when unlocked:")
+        let wifiSleepActionHeaderMenuItem = wifiMenu?.item(withTitle: "Action when sleeping")
+        let wifiUnlockActionHeaderMenuItem = wifiMenu?.item(withTitle: "Action when unlocked")
 
         bluetoothMenuItem?.setAccessibilityIdentifier("AppDelegate.bluetoothMenuItem")
         bluetoothSleepActionHeaderMenuItem?.setAccessibilityIdentifier("AppDelegate.bluetoothSleepActionHeaderMenuItem")
@@ -491,6 +495,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         bluetoothActionOnScreenUnlockNothing.setAccessibilityIdentifier("AppDelegate.bluetoothActionOnScreenUnlockNothing")
 
         wifiMenuItem?.setAccessibilityIdentifier("AppDelegate.wifiMenuItem")
+        wifiSleepActionHeaderMenuItem?.setAccessibilityIdentifier("AppDelegate.wifiSleepActionHeaderMenuItem")
         disableWifiOnPowerDownMenuItem.setAccessibilityIdentifier("AppDelegate.disableWifiOnPowerDownMenuItem")
         wifiUnlockActionHeaderMenuItem?.setAccessibilityIdentifier("AppDelegate.wifiUnlockActionHeaderMenuItem")
         wifiActionOnScreenUnlockRestore.setAccessibilityIdentifier("AppDelegate.wifiActionOnScreenUnlockRestore")

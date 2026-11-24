@@ -14,6 +14,8 @@ With Bluesnooze the Bluetooth connection is switched off when your Mac sleeps, a
 
 Bluesnooze can also manage the Wi-Fi connection in the same way (disabled by default).
 
+In the Bluetooth menu, choose either **Turn off Bluetooth** or **Disconnect selected devices** for sleep. Selecting one automatically disables the other.
+
 ![Screenshot showing Bluesnooze in the status bar](images/screenshot.png)
 
 ## Installation
