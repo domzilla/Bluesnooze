@@ -24,6 +24,7 @@ Minimum macOS version: 10.13 (use [older version](https://github.com/stefansundi
 1. In Finder, open `Bluesnooze.zip` in your `Downloads` directory.
 1. Drag `Bluesnooze.app` to your `Applications` directory.
 1. Launch `Bluesnooze`.
+1. If macOS asks for Bluetooth access, allow it so Bluesnooze can manage Bluetooth connections.
 1. *Optional*: Configure <kbd>Wi-Fi</kbd> behavior.
 1. *Optional*: Configure <kbd>Launch at login</kbd>.
 
